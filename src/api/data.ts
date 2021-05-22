@@ -6,6 +6,7 @@ export interface Group {
   avatar?: string
   location: string
   description: string
+  online: boolean
 }
 
 export interface Profile {

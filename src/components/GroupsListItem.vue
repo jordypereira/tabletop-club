@@ -15,13 +15,15 @@ const props = defineProps({
 
 <template>
   <div class="flex justify-center gap-2">
-    <img
-      width="100"
-      height="100"
-      :src="props.group.avatar ?? imgUrl"
-      :alt="`Image of ${props.group.title}`"
-      class="rounded-full max-w-full"
-    />
+    <div>
+      <img
+        width="100"
+        height="100"
+        :src="props.group.avatar ?? imgUrl"
+        :alt="`Image of ${props.group.title}`"
+        class="block rounded-full h-auto"
+      />
+    </div>
     <div class="flex flex-col">
       <h2>
         {{ props.group.title }}

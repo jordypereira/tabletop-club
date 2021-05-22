@@ -5,6 +5,10 @@ import App from './App.vue'
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
 import './styles/main.css'
+import '@github/auto-complete-element'
+import 'primevue/resources/themes/saga-blue/theme.css' // theme
+import 'primevue/resources/primevue.min.css' // 'core css
+import 'primeicons/primeicons.css' // icons
 
 const routes = setupLayouts(generatedRoutes)
 

@@ -10,10 +10,13 @@
     <router-link class="icon-btn mx-2" to="/groups" title="groups">
       Groups
     </router-link>
+    <router-link class="icon-btn mx-2" to="/groups/create" title="groups.create">
+      Create Group
+    </router-link>
     <router-link class="icon-btn mx-2" to="/profile" title="profile">
       Profile
     </router-link>
-    <router-link class="icon-btn mx-2" to="/groups/create" title="host">
+    <router-link class="icon-btn justify-center mx-2" to="/groups/create" title="host">
       Host
     </router-link>
   </nav>

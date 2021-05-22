@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, defineProps } from 'vue'
+import { ref, defineProps } from 'vue'
+import { instance } from '~/api/useAxios'
+
 import type { Group } from '~/api/data'
-import { groups } from '~/api/data'
 
 const props = defineProps({
   id: {
@@ -10,14 +11,21 @@ const props = defineProps({
   },
 })
 
-const item = computed<Group>(() => groups.find(({ id }) => String(id) === props.id))
+const item = ref<Group>()
+
+async function fetch() {
+  const resp = await instance.get<Group>(`groups/${props.id}`)
+  item.value = resp.data
+}
+
+fetch()
 
 </script>
 
 <template>
-  <div>
+  <div v-if="item">
     <div>
-      <img :src="item.avatar" alt="" srcset="">
+      <img v-if="item.avatar" :src="item.avatar" alt="" srcset="">
     </div>
     <h1>{{ item.title }}</h1>
     <h2>{{ item.location }}</h2>

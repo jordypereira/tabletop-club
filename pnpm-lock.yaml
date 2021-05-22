@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@antfu/eslint-config': ^0.6.5
+  '@github/auto-complete-element': ^3.0.2
   '@iconify/json': ^1.1.341
   '@intlify/vite-plugin-vue-i18n': ^2.1.2
   '@types/nprogress': ^0.2.0
@@ -11,12 +12,16 @@ specifiers:
   '@vue/server-renderer': ^3.0.11
   '@vueuse/core': ^4.9.2
   '@vueuse/head': ^0.5.1
+  axios: ^0.21.1
   cross-env: ^7.0.3
   eslint: ^7.26.0
   https-localhost: ^4.6.5
   markdown-it-prism: ^2.1.6
   nprogress: ^0.2.0
+  pinia: ^2.0.0-alpha.19
   pnpm: ^6.3.0
+  primeicons: ^4.1.0
+  primevue: ^3.5.0
   prism-theme-vars: ^0.2.2
   typescript: ^4.2.4
   vite: ^2.3.0
@@ -34,9 +39,14 @@ specifiers:
   vue-tsc: ^0.1.2
 
 dependencies:
+  '@github/auto-complete-element': 3.0.2
   '@vueuse/core': 4.9.2_vue@3.0.11
   '@vueuse/head': 0.5.1_vue@3.0.11
+  axios: 0.21.1
   nprogress: 0.2.0
+  pinia: 2.0.0-alpha.19
+  primeicons: 4.1.0
+  primevue: 3.5.0
   prism-theme-vars: 0.2.2
   vue: 3.0.11
   vue-i18n: 9.1.6_vue@3.0.11
@@ -1214,6 +1224,16 @@ packages:
       - supports-color
     dev: true
 
+  /@github/auto-complete-element/3.0.2:
+    resolution: {integrity: sha512-2N6SP/WOvPPnMm5E0uq21AyCxsJ0d6cBxBZ0yVNpvgeaNgPNI8gR1h54c2Ao4iQtvFce6eWdIezBXLDPMPbDag==}
+    dependencies:
+      '@github/combobox-nav': 2.0.2
+    dev: false
+
+  /@github/combobox-nav/2.0.2:
+    resolution: {integrity: sha512-xVnncEyRjIFKWT1Bw0R51/V/13vwYrqg6v7rc8HNfsa5pstVqHx/L2ai8eX/3iK98uk6JxGJDzm8ryTo86S+nQ==}
+    dev: false
+
   /@hapi/address/2.1.4:
     resolution: {integrity: sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ==}
     deprecated: Moved to 'npm install @sideway/address'
@@ -1839,6 +1859,10 @@ packages:
       '@vue/shared': 3.0.11
     dev: true
 
+  /@vue/devtools-api/6.0.0-beta.11:
+    resolution: {integrity: sha512-vpw61AkW9U8c2upjJCljHq9eh1KkD4FJ7DYbRzIETpj9WAw2VESudJZosAk4M+7npBo1Zu1jNQY03HUMVO/czQ==}
+    dev: false
+
   /@vue/devtools-api/6.0.0-beta.9:
     resolution: {integrity: sha512-Qo5OXPt/+k26ffg/ZbyR3Ldlmp5uttfPP3B1G3Uo1Ha/DmnqeUlvwebVGDT3EXM6RNL5SoW2gvVLyFq58+8nZg==}
     dev: false
@@ -2147,6 +2171,14 @@ packages:
   /aws4/1.11.0:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
     dev: true
+
+  /axios/0.21.1:
+    resolution: {integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==}
+    dependencies:
+      follow-redirects: 1.14.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   /babel-plugin-dynamic-import-node/2.3.3:
     resolution: {integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==}
@@ -3564,6 +3596,16 @@ packages:
     resolution: {integrity: sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /follow-redirects/1.14.1:
+    resolution: {integrity: sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
 
   /foreach/2.0.5:
     resolution: {integrity: sha1-C+4AUBiusmDQo6865ljdATbsG5k=}
@@ -5235,6 +5277,12 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /pinia/2.0.0-alpha.19:
+    resolution: {integrity: sha512-U/FvKm2tVUdqEuPorkYvD3oCgIj/u5EnF9TbX5dEpkNkoWKQM1i23e97QKtQFGuTxMSfzmBFFINv4A9VeVZ1wQ==}
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.11
+    dev: false
+
   /pirates/4.0.1:
     resolution: {integrity: sha512-WuNqLTbMI3tmfef2TKxlQmAiLHKtFhlsCZnPIpuv2Ow0RDVO8lfy1Opf4NUzlMXLjPl+Men7AuVdX6TA+s+uGA==}
     engines: {node: '>= 6'}
@@ -5369,6 +5417,14 @@ packages:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
     engines: {node: '>=6'}
     dev: true
+
+  /primeicons/4.1.0:
+    resolution: {integrity: sha512-uEv2pSPk1zQCfaB2VgnUfnUxxlGryYi+5rbdxmZBBt5v9S/pscIQYS5YDLxsQZ7D9jn5c76+Tx5wX/2J1nK6sA==}
+    dev: false
+
+  /primevue/3.5.0:
+    resolution: {integrity: sha512-IB8CJ8JZF2X18F5NG13fMKwG/zUJ215pbWXdoNxMSULvybqnVRlS4xDCy1zm9DWnGgozjANNuptcCpNj5D3Hbw==}
+    dev: false
 
   /prism-theme-vars/0.2.2:
     resolution: {integrity: sha512-EL9ifuU/F8tEldoCa2sspiiLWysCL54xDbf2gN/ubwdtbuJROqOGopG5kSwunapwaioT+jLUQ/Ky+7jnv62xJA==}
